@@ -4,47 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/script.js" defer></script>
     <title>Projeto API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
-    <div class="box">
-        <h1>Cadastrar Conta</h1>
-        <form id="form-api">
-            <div>
-                <label for="empresas">Empresa:</label>
-                <select class="empresa" name="contaEmpresa" id="empresas">
-                    <option value="SABESP">Sabesp</option>
-                    <option value="ENEL">Enel</option>
-                    <option value="COHAB">Cohab</option>
-                    <option value="VIVO">Vivo</option>
-                </select>
-            </div>
-    
-                <input class="valor" type="number" name="valor" placeholder="Insira o valor da fatura">
-    
-            <div class="status-pag">
-                <input id="pendente" type="radio" name="statusConta" value="PENDENTE" checked>
-                <label for="pendente">Pendente</label><br>
-    
-                <input id="pago" type="radio" name="statusConta" value="PAGO">
-                <label for="pago">Pago</label>
-            </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                    
+                <h1>Cadastrar Conta</h1>
+                <form id="form-api">
+                    <div class="form-group mt-3">
+                        <label for="empresas">Empresa:</label>
+                        <select class="form-select" name="contaEmpresa" id="empresas">
+                            <option value="SABESP">Sabesp</option>
+                            <option value="ENEL">Enel</option>
+                            <option value="COHAB">Cohab</option>
+                            <option value="VIVO">Vivo</option>
+                        </select>
+                    </div>
+                    <div class="form-group mt-3">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">R$</span>
+                            <input type="number" class="form-control" name="valor" placeholder="Digite o valor da conta">
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input class="form-check-input" id="pendente" type="radio" name="statusConta" value="PENDENTE" checked>
+                        <label for="pendente">Pendente</label><br>
             
-            <div>
-                <label for="dt-venc">Data de vencimento:</label><br>
-                <input class="dt-venc" type="date" name="dtVenc" id="dt-venc">
+                        <input class="form-check-input" id="pago" type="radio" name="statusConta" value="PAGO">
+                        <label for="pago">Pago</label>
+                    </div>
+                    
+                    <div class="form-group mt-3">
+                        <label for="dt-venc">Data de vencimento:</label><br>
+                        <input class="dt-venc" type="date" name="dtVenc" id="dt-venc">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="dt-venc">Data de pagamento (Opcional):</label><br>
+                        <input class="dt-pag" type="date" name="dtPag" id="dt-pag">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="dt-venc">Data de emissão (Opcional):</label><br>
+                        <input class="dt-emi" type="date" name="dtEmi" id="dt-emi">
+                    </div>
+                    <button class="btn btn-primary mt-3" type="submit">Enviar</button>
+                </form>
             </div>
-            <div>
-                <label for="dt-venc">Data de pagamento (Opcional):</label><br>
-                <input class="dt-pag" type="date" name="dtPag" id="dt-pag">
-            </div>
-            <div>
-                <label for="dt-venc">Data de emissão (Opcional):</label><br>
-                <input class="dt-emi" type="date" name="dtEmi" id="dt-emi">
-            </div>
-            <button type="submit">Enviar</button>
-        </form>
+        </div>
+        
     </div>
+<script src="js/script.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
