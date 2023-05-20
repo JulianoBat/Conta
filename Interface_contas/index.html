@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/script.js" defer></script>
+    <title>Projeto API</title>
+</head>
+<body>
+    <div class="box">
+        <h1>Cadastrar Conta</h1>
+        <form id="form-api">
+            <div>
+                <label for="empresas">Empresa:</label>
+                <select class="empresa" name="contaEmpresa" id="empresas">
+                    <option value="SABESP">Sabesp</option>
+                    <option value="ENEL">Enel</option>
+                    <option value="COHAB">Cohab</option>
+                    <option value="VIVO">Vivo</option>
+                </select>
+            </div>
+    
+                <input class="valor" type="number" name="valor" placeholder="Insira o valor da fatura">
+    
+            <div class="status-pag">
+                <input id="pendente" type="radio" name="statusConta" value="PENDENTE" checked>
+                <label for="pendente">Pendente</label><br>
+    
+                <input id="pago" type="radio" name="statusConta" value="PAGO">
+                <label for="pago">Pago</label>
+            </div>
+            
+            <div>
+                <label for="dt-venc">Data de vencimento:</label><br>
+                <input class="dt-venc" type="date" name="dtVenc" id="dt-venc">
+            </div>
+            <div>
+                <label for="dt-venc">Data de pagamento (Opcional):</label><br>
+                <input class="dt-pag" type="date" name="dtPag" id="dt-pag">
+            </div>
+            <div>
+                <label for="dt-venc">Data de emissão (Opcional):</label><br>
+                <input class="dt-emi" type="date" name="dtEmi" id="dt-emi">
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
