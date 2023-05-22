@@ -25,15 +25,11 @@ import com.criandoapi.projeto.services.ContaService;
 public class ContaController {
 
 	@Autowired
-	private ContaRepository repository;
-	
-	@Autowired
 	private ContaService service;
-	
-	
+
 	@GetMapping
-	public ResponseEntity<List<Conta>>  listaConta() {
-		return ResponseEntity.status(200).body(service.listarConta()); 
+	public ResponseEntity<List<Conta>> listaConta() {
+		return ResponseEntity.status(200).body(service.listarConta());
 	}
 
 	@PostMapping
@@ -43,14 +39,12 @@ public class ContaController {
 
 	@PutMapping
 	public ResponseEntity<Conta> alterarConta(@RequestBody Conta conta) {
-		Conta novaConta = repository.save(conta);
-		return ResponseEntity.status(201).body(novaConta);
+		return ResponseEntity.status(200).body(service.alterarConta(conta));
 	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deletarConta(@PathVariable Long id) {
-		repository.findById(id);
-		repository.deleteById(id);
+		service.excluirConta(id);
 		return ResponseEntity.status(204).build();
 	}
 }

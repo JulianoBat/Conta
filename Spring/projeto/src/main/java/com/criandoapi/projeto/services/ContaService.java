@@ -24,4 +24,14 @@ public class ContaService {
 		return novaConta;
 	}
 	
+	public Conta alterarConta(Conta conta) {
+		Conta novaConta = repository.save(conta);
+		return novaConta;
+	}
+	
+	public Boolean excluirConta (Long id) {
+		repository.deleteById(id);
+		return true;
+	}
+	
 }
