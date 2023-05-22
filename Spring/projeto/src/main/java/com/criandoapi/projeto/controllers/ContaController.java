@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.criandoapi.projeto.entities.Conta;
 import com.criandoapi.projeto.repositories.ContaRepository;
+import com.criandoapi.projeto.services.ContaService;
 
 @RestController
 @CrossOrigin("*")
@@ -26,17 +27,18 @@ public class ContaController {
 	@Autowired
 	private ContaRepository repository;
 	
+	@Autowired
+	private ContaService service;
+	
 	
 	@GetMapping
 	public ResponseEntity<List<Conta>>  listaConta() {
-		List<Conta> lista = (List<Conta>) repository.findAll();
-		return ResponseEntity.status(200).body(lista); 
+		return ResponseEntity.status(200).body(service.listarConta()); 
 	}
 
 	@PostMapping
 	public ResponseEntity<Conta> registrarConta(@RequestBody Conta conta) {
-		Conta novaConta = repository.save(conta);
-		return ResponseEntity.status(201).body(novaConta);
+		return ResponseEntity.status(201).body(service.criarConta(conta));
 	}
 
 	@PutMapping
