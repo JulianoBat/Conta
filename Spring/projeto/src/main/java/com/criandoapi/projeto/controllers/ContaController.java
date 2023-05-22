@@ -47,7 +47,7 @@ public class ContaController {
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deletarConta(@PathVariable Long id) {
-		Optional<Conta> conta = repository.findById(id);
+		repository.findById(id);
 		repository.deleteById(id);
 		return ResponseEntity.status(204).build();
 	}
