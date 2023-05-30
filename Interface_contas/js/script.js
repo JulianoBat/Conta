@@ -28,7 +28,7 @@ formEl.addEventListener('submit', evento => {
         if (momentoAtual() > IdataVenc) {
             return true;
         }
-        else{
+        else {
             return false;
         }
     }

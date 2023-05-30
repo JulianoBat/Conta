@@ -12,18 +12,21 @@ async function getAll() {
         const tr = document.createElement("tr");
         const contaEmpresa = document.createElement("td");
         const dtVenc = document.createElement("td");
-        const status = document.createElement("td");
         const valor = document.createElement("td");
+        const status = document.createElement("td");
+        
 
         contaEmpresa.innerText = data[i].contaEmpresa;
         dtVenc.innerText = data[i].dtVenc;
-        status.innerText = data[i].statusConta;
         valor.innerText = data[i].valor;
+        status.innerText = data[i].statusConta;
+        
 
         tr.appendChild(contaEmpresa);
         tr.appendChild(dtVenc);
-        tr.appendChild(status);
         tr.appendChild(valor);
+        tr.appendChild(status);
+        
 
         if(data[i].atraso === false && data[i].statusConta === 'PENDENTE') {
             tr.setAttribute("class", "table-warning");
