@@ -1,5 +1,5 @@
 const formEl = document.getElementById('form-api');
-const IdataVenc = document.querySelector("#dt-venc").value;
+
 const IstatusConta = document.querySelector("input[name='statusConta']:checked").value;
 
 
@@ -12,11 +12,11 @@ function momentoAtual() {
 };
 
 
-
-
-
 formEl.addEventListener('submit', evento => {
     evento.preventDefault();
+    const IdataVenc = document.querySelector(".dt-venc").value;
+    console.log(IdataVenc);
+    console.log(momentoAtual());
 
     const momentoA = momentoAtual();
     const formData = new FormData(formEl);
@@ -26,11 +26,10 @@ formEl.addEventListener('submit', evento => {
 
     function verificaVenc() {
         if (momentoAtual() > IdataVenc) {
-            console.log(IdataVenc)
-            return false;
-        }
-        else {
             return true;
+        }
+        else{
+            return false;
         }
     }
 

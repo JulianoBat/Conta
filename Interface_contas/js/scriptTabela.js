@@ -25,12 +25,11 @@ async function getAll() {
         tr.appendChild(status);
         tr.appendChild(valor);
 
-        if(data[i].statusConta === 'PENDENTE') {
+        if(data[i].atraso === false && data[i].statusConta === 'PENDENTE') {
             tr.setAttribute("class", "table-warning");
-        }
-
-        if(data[i].atraso === true){
-            tr.setAttribute("class", "table-danger");
+        }else if(data[i].atraso === true && data[i].statusConta === 'PENDENTE'){
+            status.innerText = "ATRASO"
+            tr.setAttribute("class", "table-danger"); 
         }
 
         if(data[i].statusConta === 'PAGO') {
