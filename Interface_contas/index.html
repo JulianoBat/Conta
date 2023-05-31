@@ -37,7 +37,7 @@
                 <div class="form-group mt-3">
                     <div class="input-group mb-3">
                         <span class="input-group-text">R$</span>
-                        <input type="numeric" class="form-control" name="valor" placeholder="Digite o valor da conta">
+                        <input id="valor" type="numeric" class="form-control" name="valor" placeholder="Digite o valor da conta">
                     </div>
                 </div>
                 <div class="form-group mt-3">
@@ -60,7 +60,8 @@
                     <label for="dt-venc">Data de emissão (Opcional):</label><br>
                     <input class="dt-emi" type="date" name="dtEmi" id="dt-emi">
                 </div>
-                <button class="btn btn-primary mt-5" onclick="window.location.reload()" type="submit">Enviar</button>
+                <button id="btn1" class="btn btn-primary mt-5" /*onclick="window.location.reload()"*/ type="submit">Enviar</button>
+                <button class="btn btn-danger mt-5" type="reset" onclick="window.location.reload()">Cancelar</button>
             </form>  
         </div>
         </div>
@@ -77,9 +78,10 @@
                   <th scope="col">Data de vencimento</th>
                   <th scope="col">Valor</th>
                   <th scope="col">Status da Conta</th>
+                  <th scope="col">Alterar/Excluir</th>
                 </tr>
               </thead>
-              <tbody class="table-group-divider" id="tbody">
+              <tbody class="tabela table-group-divider" id="tbody">
                 
               </tbody>
           </table>
