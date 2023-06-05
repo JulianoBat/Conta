@@ -31,15 +31,20 @@ public class ContaController {
 	public ResponseEntity<List<Conta>> listaConta() {
 		return ResponseEntity.status(200).body(service.listarConta());
 	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<Conta> listaContaId(@PathVariable(value="id")long id) {
+		return ResponseEntity.status(200).body(service.contaId(id));
+	}
 
 	@PostMapping
 	public ResponseEntity<Conta> registrarConta(@RequestBody Conta conta) {
 		return ResponseEntity.status(201).body(service.criarConta(conta));
 	}
 
-	@PutMapping
-	public ResponseEntity<Conta> alterarConta(@RequestBody Conta conta) {
-		return ResponseEntity.status(200).body(service.alterarConta(conta));
+	@PutMapping("/{id}")
+	public ResponseEntity<Conta> alterarConta(@PathVariable long id, @RequestBody Conta conta) {
+		return ResponseEntity.status(201).body(service.alterarConta(id, conta));
 	}
 
 	@DeleteMapping("/{id}")
