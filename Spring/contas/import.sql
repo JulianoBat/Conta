@@ -1,1 +1,0 @@
-INSERT INTO tb_contas (contaEmpresa, dtVenc, dtPag, dtEmi, dtReg, valor, atraso) VALUES ('enel', '2023-05-10', '2023-05-05', '2023-05-01', '2023-05-02', 200.0, FALSE);
